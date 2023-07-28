@@ -5,8 +5,8 @@ import com.example.demo.model.Person;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+
 import javax.websocket.server.PathParam;
-import java.util.ArrayList;
 import java.util.List;
 
 @RestController
@@ -19,9 +19,12 @@ public class PersonView {
         return controller.findPerson(name);
     }
 
+
     @DeleteMapping("/person")
-    public void deletePerson(@PathParam("name") String name){
+    public String deletePerson(@PathParam("name") String name){
         controller.removePerson(name);
+
+        return "Pessoa com o nome de " + name + " foi deletada";
     }
 
     @PostMapping("/person")
@@ -30,8 +33,13 @@ public class PersonView {
     }
 
     @PutMapping("/person")
-    public Person editPerson(@PathParam("name") String name, @PathParam("sexo") String sexo){
+    public Person updatePerson(@PathParam("name") String name, @PathParam("sexo") String sexo){
         return controller.editPerson(name, sexo);
+    }
+
+    @GetMapping("/all")
+    public List<Person> listAll(){
+        return controller.listAll();
     }
 
     @GetMapping("/home")
