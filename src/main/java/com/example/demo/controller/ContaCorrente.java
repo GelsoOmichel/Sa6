@@ -11,6 +11,8 @@ public interface ContaCorrente {
 
     void transferir(Double quantidade, Conta conta);
 
+    String transferir(Long contaOrigem, Long contaDestino, Double valor);
+
     Double consultaSaldo(ContaCorrentePF conta);
 
     void sacar(Double quantidade);

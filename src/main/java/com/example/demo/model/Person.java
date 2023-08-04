@@ -1,5 +1,6 @@
 package com.example.demo.model;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 
@@ -9,6 +10,7 @@ public class Person {
     @Id
     private Integer id;
 
+    @Column(name = "nome")
     private String name;
 
     private String sexo;

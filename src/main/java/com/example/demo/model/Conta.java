@@ -5,7 +5,7 @@ public abstract class Conta {
 
      private Long numeroConta;
 
-     //private Person pessoa;
+    private Person pessoa;
 
      private Double saldo;
 
