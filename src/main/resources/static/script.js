@@ -2,10 +2,11 @@ const formPessoa = document.getElementById("cadastroPessoa");
 const tabelaPessoa = document.getElementById("tabelaPessoas")
     .getElementsByTagName('tbody')[0];
 const btnAll = document.getElementById("listarPessoas");
+const btnDel = document.getElementById("excluir");
 
 btnAll.addEventListener("click", function (){
-    fetch("/all")
-        .then(response => response.json())
+        fetch("/all")
+            .then(response => response.json())
         .then(data => {
             tabelaPessoa.innerHTML ="";
             data.forEach(pessoa => {
@@ -28,11 +29,26 @@ formPessoa.addEventListener("submit", function (event){
     fetch("/person?"+parametros.toString(), {
         method: "POST"
     }).then(response => response.json())
-        .then(data => {
-            document.getElementById("id").value = data.id;
+    .then(data => {
+        document.getElementById("id").value = data.id;
 
 
-        })
+    })
+
 
 
 });
+btnDel.addEventListener("click", function () {
+    const formDados = new FormData(formPessoa);
+    const parametros = new URLSearchParams(formDados);
+
+    fetch("/person?" + parametros.toString(), {
+        method: "DELETE"
+    }).then(({ ok }) => {
+        if (ok) {
+            alert("Excluiu!");
+        } else {
+            alert("Não encontrou!");
+        }
+    })
+})

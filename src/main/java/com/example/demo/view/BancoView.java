@@ -18,9 +18,9 @@ public class BancoView {
     private BancoController bancoController;
 
 
-    @PostMapping("/criaconta")
-    public ContaCorrentePF criarConta(@PathParam("name") String name, @PathParam("type") String type) throws Exception {
-        return bancoController.criarConta(name, type);
+    @PostMapping("/criarconta")
+    public ContaCorrentePF criarConta(@PathParam("id") Integer id, @PathParam("name") String name, @PathParam("type") String type) throws Exception {
+        return bancoController.criarConta(id, name, type);
     }
 
     @GetMapping("/type")
@@ -35,8 +35,18 @@ public class BancoView {
     }
 
     @PutMapping("/transferir")
-    public String transferir(@PathParam("contaOrigem") Long contaOrigem, @PathParam("contaDestino") Long contaDestino, @PathParam("valor") Double valor){
-        return bancoController.transferir(contaOrigem, contaDestino, valor);
+    public void transferir(@PathParam("contaOrigem") Long contaOrigem, @PathParam("contaDestino") Long contaDestino, @PathParam("valor") Double valor){
+        bancoController.transferir(contaOrigem, contaDestino, valor);
+    }
+
+    @PutMapping("/depositar")
+    public void depositar(@PathParam("quantidade") Double quantidade, @PathParam("contaDestino") Long contaDestino){
+        bancoController.depositar(quantidade, contaDestino);
+    }
+
+    @PutMapping("/sacar")
+    public void sacar(@PathParam("quantidade") Double quantidade, @PathParam("contaOrigem") Long contaOrigem){
+        bancoController.sacar(quantidade, contaOrigem);
     }
 
 }
