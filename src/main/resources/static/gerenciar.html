@@ -15,58 +15,37 @@
 <br>
 <form id="formSacar">
         <label for="numero_conta_sacar">Número conta</label>
-        <input id="numero_conta_sacar" type="text"><br>
+        <input id="numero_conta_sacar" type="number"><br>
     <p>
 
     <label for="valor_sacar">Valor</label>
-    <input id="valor_sacar" type="text">
+    <input id="valor_sacar" type="number">
     </p>
-<!--        <label for="tipo_conta_sacar">Selecione o tipo da conta</label>-->
-<!--        <select id="tipo_conta_sacar">-->
-<!--            <option value="corrente">Conta corrente</option>-->
-<!--            <option value="paupanca">Conta poupança</option>-->
-<!--        </select><br>-->
-<!--            <label for="pessoa_sacar">Selecione uma pessoa</label>-->
-<!--                <select id="pessoa_sacar" class="pessoa">-->
-<!--                </select><br>-->
+
                 <button id="sacar" type="submit">Sacar</button>
 </form>
 <hr />
 <form id="formDepositar">
     <label for="numero_conta_depositar">Número conta</label>
-    <input id="numero_conta_depositar" type="text"><br>
+    <input id="numero_conta_depositar" type="number"><br>
     <label for="valor_depositar">Valor</label>
-    <input id="valor_depositar" type="text">
+    <input id="valor_depositar" type="number">
     <br />
-<!--    <label for="tipo_conta_depositar">Selecione o tipo da conta</label>-->
-<!--    <select id="tipo_conta_depositar">-->
-<!--        <option value="corrente">Conta corrente</option>-->
-<!--        <option value="paupanca">Conta poupança</option>-->
-<!--    </select><br>-->
-<!--    <label for="pessoa_depositar">Selecione uma pessoa</label>-->
-<!--        <select id="pessoa_depositar" class="pessoa">-->
-<!--        </select><br>-->
+
         <button id="depositar" type="submit">Depositar</button>
     <br />
 </form>
 <hr />
 <form id="formTransferir">
     <label for="numero_conta_origem_transferir">Número conta origem</label>
-    <input id="numero_conta_origem_transferir" type="text"><br>
+    <input id="numero_conta_origem_transferir" type="number"><br>
     <label for="valor_transferir">Valor</label>
-    <input id="valor_transferir" type="text">
+    <input id="valor_transferir" type="number">
     <br />
     <label for="numero_conta_destino_transferir">Número conta destino</label>
-    <input id="numero_conta_destino_transferir" type="text"><br>
+    <input id="numero_conta_destino_transferir" type="number"><br>
 
-<!--    <label for="tipo_conta_transferir">Selecione o tipo da conta</label>-->
-<!--        <select id="tipo_conta_transferir">-->
-<!--            <option value="corrente">Conta corrente</option>-->
-<!--            <option value="paupanca">Conta poupança</option>-->
-<!--        </select><br>-->
-<!--    <label for="pessoa_transferir">Selecione uma pessoa</label>-->
-<!--    <select id="pessoa_transferir" class="pessoa">-->
-<!--    </select><br>-->
+
     <button id="transferir" type="submit">Transferir</button>
 </form>
 <script src="conta.js"></script>
